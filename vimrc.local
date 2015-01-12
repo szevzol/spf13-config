@@ -1,0 +1,36 @@
+" Tweak spf13's default settings
+
+" Disable spell checking
+set nospell
+
+" Enable folding
+set foldenable
+
+" Don't close all folds automatically when opening a file
+set foldlevelstart=99
+
+" Draw a line at 80th column
+if has('colorcolumn')
+    set colorcolumn=80
+endif
+
+" Enable pymode plugin to set colorcolumn
+let g:pymode_options_colorcolumn = 1
+
+" Do not show indent guides automatically - they can be toggled by <Leader>ig
+let g:indent_guides_enable_on_vim_startup = 0
+
+" Do not remove whitespaces automatically
+let g:spf13_keep_trailing_whitespace = 1
+
+" Do not echo buffers to the command prompt line. Status line contains the
+" buffer list, and also CtrlPBuffer can be used to show buffers and select one
+" of them.
+" Fixes "Press ENTER to continue" on startup and on file open.
+let g:bufferline_echo=0
+
+" Open list of most recently used files
+map <F7> :CtrlPMRUFiles<CR>
+
+" Open buffer list, buffer can be selected by typing file name
+map <F8> :CtrlPBuffer<CR>
